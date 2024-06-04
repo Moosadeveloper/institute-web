@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<style>
+       :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: black;
+  background-color: whitesmoke;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bouncing-blob {
+  width: 32vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  will-change: transform;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transform-origin: left top;
+}
+
+.bouncing-blob--blue {
+  background: #4783c7;
+}
+
+.bouncing-blob--white {
+  background: #ffffff;
+  z-index: 2;
+  width: 15vw;
+}
+
+.bouncing-blob--purple {
+  background: #8c8ff1;
+}
+
+.bouncing-blob--pink {
+  background: #e289cd50;
+}
+
+.bouncing-blobs-container {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bouncing-blobs-glass {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(140px);
+  -webkit-backdrop-filter: blur(140px);
+  pointer-events: none;
+}
+
+.bouncing-blobs {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.countainer-0{
+    margin-top: 190px;
+        display: flex;
+       
+      gap: 60px;
+        flex-wrap: wrap;
+        
+    }
+    .card {
+ width: 190px;
+ margin-left: 320px;
+ height: 254px;
+ border-radius: 20px;
+ background: #f5f5f5;
+ /* position: relative; */
+ padding: 1.8rem;
+ border: 2px solid #c3c6ce;
+ transition: 0.5s ease-out;
+ overflow: visible;
+}
+
+.card-details  {
+ color: black;
+ height: 100%;
+ gap: .5em;
+ display: grid;
+ place-content: center;
+}
+.card-details img{
+  width: 150px;
+}
+
+.card-button {
+ transform: translate(-50%, 125%);
+ width: 90%;
+ border-radius: 1rem;
+ border: none;
+ background-color: #008bf8;
+ color: #fff;
+ font-size: 1rem;
+ padding: .5rem 1rem;
+ position: absolute;
+ left: 50%;
+ bottom: 0;
+ opacity: 0;
+ transition: 0.3s ease-out;
+}
+
+.text-body {
+ color: rgb(134, 134, 134);
+}
+
+/*Text*/
+.text-title {
+ font-size: 1.5em;
+ font-weight: bold;
+}
+
+/*Hover*/
+.card:hover {
+ border-color: #008bf8;
+ box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card:hover .card-button {
+ transform: translate(-50%, 50%);
+ opacity: 1;
+}
+
+
+
+@media (max-width: 768px) {
+      .countainer-0 {
+        margin-top: 100px !important;
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        margin: 10px 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        width: 200px;
+        padding: 1rem;
+      }
+      .card-details img {
+        width: 120px;
+      }
+      .card-button {
+        font-size: 0.8rem;
+      }
+    }
+    @media (max-width: 1000px) {
+      .countainer-0 {
+        margin-top: 100px !important;
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        margin: 10px 0;
+      }
+    }
+
+
+  
+
+</style>
+<body>
+    <div class="bouncing-blobs-container">
+        <div class="bouncing-blobs-glass"></div>
+        <div class="bouncing-blobs">
+          <div class="bouncing-blob bouncing-blob--blue"></div>
+          <div class="bouncing-blob bouncing-blob--blue"></div>
+          <div class="bouncing-blob bouncing-blob--blue"></div>
+          <div class="bouncing-blob bouncing-blob--white"></div>
+          <div class="bouncing-blob bouncing-blob--purple"></div>
+          <div class="bouncing-blob bouncing-blob--purple"></div>
+          <div class="bouncing-blob bouncing-blob--pink"></div>
+        </div>
+      </div>
+      <div class="countainer-0">
+
+      
+        <div data-aos="fade-right" class="card">
+          <div class="card-details">
+          <a href="https://aujesurayya.com/"><img src="img/auj schooling system (LinkedIn Career Page Banner).png" alt=""></a>
+          </div>
+          <button class="card-button">Auj schooling system</button>
+        </div>
+        <div data-aos="fade-left" class="card">
+          <div class="card-details">
+            <a href="auj/index.html"><img src="img/auj schooling system (LinkedIn Career Page Banner) (1).png" alt=""></a>
+          <button class="card-button">Auj computer institute</button>
+        </div>
+    </div>
+    
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>const MIN_SPEED = 1.5
+    const MAX_SPEED = 2.5
+    
+    function randomNumber(min, max) {
+      return Math.random() * (max - min) + min
+    }
+    
+    class Blob {
+      constructor(el) {
+        this.el = el
+        const boundingRect = this.el.getBoundingClientRect()
+        this.size = boundingRect.width
+        this.initialX = randomNumber(0, window.innerWidth - this.size)
+        this.initialY = randomNumber(0, window.innerHeight - this.size)
+        this.el.style.top = `${this.initialY}px`
+        this.el.style.left = `${this.initialX}px`
+        this.vx =
+          randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1)
+        this.vy =
+          randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1)
+        this.x = this.initialX
+        this.y = this.initialY
+      }
+    
+      update() {
+        this.x += this.vx
+        this.y += this.vy
+        if (this.x >= window.innerWidth - this.size) {
+          this.x = window.innerWidth - this.size
+          this.vx *= -1
+        }
+        if (this.y >= window.innerHeight - this.size) {
+          this.y = window.innerHeight - this.size
+          this.vy *= -1
+        }
+        if (this.x <= 0) {
+          this.x = 0
+          this.vx *= -1
+        }
+        if (this.y <= 0) {
+          this.y = 0
+          this.vy *= -1
+        }
+      }
+    
+      move() {
+        this.el.style.transform = `translate(${this.x - this.initialX}px, ${
+          this.y - this.initialY
+        }px)`
+      }
+    }
+    
+    function initBlobs() {
+      const blobEls = document.querySelectorAll('.bouncing-blob')
+      const blobs = Array.from(blobEls).map((blobEl) => new Blob(blobEl))
+    
+      function update() {
+        requestAnimationFrame(update)
+        blobs.forEach((blob) => {
+          blob.update()
+          blob.move()
+        })
+      }
+    
+      requestAnimationFrame(update)
+    }
+    
+    initBlobs()
+    </script>
+</html>
